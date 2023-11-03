@@ -4,8 +4,6 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ListarPlantasComponent } from './plantas/listar-plantas/listar-plantas.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
-import { PlantasService } from './plantas/plantas.service';
-import { PlantasModule } from './plantas/plantas.module';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('AppComponent', () => {
