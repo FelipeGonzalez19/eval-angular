@@ -10,11 +10,26 @@ import { Planta } from '../planta';
 export class ListarPlantasComponent implements OnInit {
 
   plantas: Array<Planta> =[];
+  plantasInterior: number = 0;
+  plantasExterior: number = 0;
 
   constructor(private plantaService: PlantasService) { }
 
   ngOnInit() {
-    this.plantaService.getPlantas().subscribe(planta => this.plantas = planta)
+    this.plantaService.getPlantas().subscribe(planta => {
+      this.plantas = planta
+      this.sumTipoPlanta(this.plantas)
+    })
+  }
+
+  sumTipoPlanta(object: Array<Planta>){
+    object.forEach(element => {
+      if(element.tipo == 'Interior'){
+        this.plantasInterior += 1
+      }else{
+        this.plantasExterior += 1
+      }
+    });
   }
 
 }
